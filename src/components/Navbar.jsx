@@ -49,8 +49,9 @@ const Input = styled.input`
   border: none;
 `
 
-const Logo = styled.div`
+const Logo = styled.h1`
   font-weight: bold;
+  font-size: 
 `
 
 const MenuItem = styled.div`

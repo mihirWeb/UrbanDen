@@ -1,7 +1,7 @@
 export const sliderItems = [
     {
       id: 1,
-      img: "https://img.freepik.com/free-photo/portrait-young-stylish-girl-model-casual-summer-clothes-brown-hat-with-natural-makeup-glasses-isolated_158538-8561.jpg?t=st=1720106219~exp=1720109819~hmac=6a8742262fafd131443403c9a43b65a30237918e7aa07bf5363eb363d1489691&w=1380",
+      img: "https://i.ibb.co/cXFnLLV/3.png",
       title: "SUMMER SALE",
       desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
       bg: "f5fafd",
@@ -15,7 +15,7 @@ export const sliderItems = [
     },
     {
       id: 3,
-      img: "https://i.ibb.co/cXFnLLV/3.png",
+      img: "https://img.freepik.com/free-photo/portrait-young-stylish-girl-model-casual-summer-clothes-brown-hat-with-natural-makeup-glasses-isolated_158538-8561.jpg?t=st=1720106219~exp=1720109819~hmac=6a8742262fafd131443403c9a43b65a30237918e7aa07bf5363eb363d1489691&w=1380",
       title: "LOUNGEWEAR LOVE",
       desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
       bg: "fbf0f4",
@@ -71,6 +71,6 @@ export const sliderItems = [
     },
     {
       id:8,
-      img:"https://www.pngarts.com/files/3/Women-Jacket-PNG-High-Quality-Image.png",
+      img:"https://img.freepik.com/premium-photo/light-women-s-hat-light-summer-shoes-black-background-minimal-summer-concept_94064-10908.jpg?ga=GA1.1.563249169.1720089574&semt=ais_user",
     },
   ]

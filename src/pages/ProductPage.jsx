@@ -4,6 +4,12 @@ import Announcements from "../components/Announcements";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Newsletter from "../components/Newsletter";
+import { useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { addProducts} from "../Redux/cartRedux.js";
+
 
 const Container = styled.div``;
 
@@ -115,52 +121,85 @@ const Button = styled.button`
 `;
 
 const ProductPage = () => {
+  const dispatch = useDispatch();
+
+  const handleCart = () => {
+    dispatch(addProducts({ ...product, quantity, color, size}))
+  }
+
+  const location = useLocation();
+  const itemId = location.pathname.split("/")[2];
+
+  const [product, setProduct] = useState({});
+  const [quantity, setQuantity] = useState(1);
+  const [color, setColor] = useState("");
+  const [size, setSize] = useState("");
+
+  useEffect(() => {
+    const getProduct = async() => {
+      try {
+        const item = await axios.get(`/api/v2/products/find/${itemId}`);
+        setProduct(item.data);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    getProduct();
+  }, [itemId]);
+
+  const handleQuantity = (type) => {
+    if(type === "increase"){
+      setQuantity(quantity+1); // can not do quantity++bcz it will change the original state of react
+    } else {
+      quantity>1 && setQuantity(quantity-1);
+    }
+   }
   return (
     <Container>
       <Navbar />
       <Announcements />
-      <Wrapper>
-        <ImgContainer>
-          <Image src="https://i.ibb.co/S6qMxwr/jean.jpg" />
+      {product && (
+        <Wrapper>
+      <ImgContainer>
+          <Image src={product?.img} />
         </ImgContainer>
         <InfoContainer>
-          <Title>Denim Jumpsuit</Title>
+          <Title>{product?.title}</Title>
           <Desc>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            venenatis, dolor in finibus malesuada, lectus ipsum porta nunc, at
-            iaculis arcu nisi sed mauris. Nulla fermentum vestibulum ex, eget
-            tristique tortor pretium ut. Curabitur elit justo, consequat id
-            condimentum ac, volutpat ornare.
+            {product?.desc}
           </Desc>
-          <Price>$ 20</Price>
+          <Price>₹ {product?.price}</Price>
           <FilterContainer>
             <Filter>
               <FilterTitle>Color</FilterTitle>
-              <FilterColor color="black" />
+              {product.color?.map((item) => <FilterColor color={item} onClick={() => setColor(item)} />)}
+              {/* <FilterColor color="black" />
               <FilterColor color="darkblue" />
-              <FilterColor color="gray" />
+              <FilterColor color="gray" /> */}
             </Filter>
             <Filter>
               <FilterTitle>Size</FilterTitle>
-              <FilterSize>
-                <FilterSizeOption>XS</FilterSizeOption>
+              <FilterSize onChange={(e) => setSize(e.target.value)}>
+              {product.size?.map((item) => <FilterSizeOption value={item}>{item}</FilterSizeOption>)}
+                {/* <FilterSizeOption>XS</FilterSizeOption>
                 <FilterSizeOption>S</FilterSizeOption>
                 <FilterSizeOption>M</FilterSizeOption>
                 <FilterSizeOption>L</FilterSizeOption>
-                <FilterSizeOption>XL</FilterSizeOption>
+                <FilterSizeOption>XL</FilterSizeOption> */}
               </FilterSize>
             </Filter>
           </FilterContainer>
           <AddContainer>
             <AmountContainer>
-              <Remove />
-              <Amount>1</Amount>
-              <Add />
+              <Remove onClick={() => handleQuantity("decrease")} />
+              <Amount>{quantity}</Amount>
+              <Add onClick={() => handleQuantity("increase")}/>
             </AmountContainer>
-            <Button>ADD TO CART</Button>
+            <Button onClick={handleCart}>ADD TO CART</Button>
           </AddContainer>
         </InfoContainer>
       </Wrapper>
+      )}
       <Newsletter />
       <Footer />
     </Container>

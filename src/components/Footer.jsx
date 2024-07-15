@@ -7,6 +7,7 @@ import {
     Room,
     Twitter,
   } from "@mui/icons-material";
+import { Link } from "react-router-dom";
   import styled from "styled-components";
   
   const Container = styled.div`
@@ -107,11 +108,11 @@ import {
         <Center>
           <Title>Useful Links</Title>
           <List>
-            <ListItem>Home</ListItem>
-            <ListItem>Cart</ListItem>
-            <ListItem>Man Fashion</ListItem>
-            <ListItem>Woman Fashion</ListItem>
-            <ListItem>Accessories</ListItem>
+            <ListItem><Link to={'/'} style={{textDecoration: "none", color: "black"}}>Home</Link></ListItem>
+            <ListItem><Link to={'/cart'} style={{textDecoration: "none", color: "black"}}>Cart</Link></ListItem>
+            <ListItem><Link to={'/products/men'} style={{textDecoration: "none", color: "black"}}>Man Fashion</Link></ListItem>
+            <ListItem><Link to={'/products/women'} style={{textDecoration: "none", color: "black"}}>Women Fashion</Link></ListItem>
+            <ListItem><Link to={'/products/accessories'} style={{textDecoration: "none", color: "black"}}>Accessories</Link></ListItem>
             <ListItem>My Account</ListItem>
             <ListItem>Order Tracking</ListItem>
             <ListItem>Wishlist</ListItem>
@@ -122,13 +123,13 @@ import {
         <Right>
           <Title>Contact</Title>
           <ContactItem>
-            <Room style={{marginRight:"10px"}}/> 622 Dixie Path , South Tobinchester 98336
+            <Room style={{marginRight:"10px"}}/> Pune, Maharastra
           </ContactItem>
           <ContactItem>
-            <Phone style={{marginRight:"10px"}}/> +1 234 56 78
+            <Phone style={{marginRight:"10px"}}/> +91 75055-73762
           </ContactItem>
           <ContactItem>
-            <MailOutline style={{marginRight:"10px"}} /> contact@lama.dev
+            <MailOutline style={{marginRight:"10px"}} /><a href="mailto:mihirpratapsingh166@gmail.com" style={{textDecoration: "none", color: "black"}}> mihirpratapsingh166@gmail.com</a>
           </ContactItem>
           <Payment src="https://i.ibb.co/Qfvn4z6/payment.png" />
         </Right>

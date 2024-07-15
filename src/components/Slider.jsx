@@ -2,6 +2,7 @@ import styled from "@emotion/styled"
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@mui/icons-material"
 import { sliderItems } from "../data.js"
 import { useState } from "react"
+import { Link } from "react-router-dom"
 
 const Container = styled.div`
     width: 100%;
@@ -114,9 +115,11 @@ const Slider = () => {
                     <Description>
                         {item.desc}
                     </Description>
+                    <Link to={'/products'}>
                     <Button>
                         SHOP NOW
                     </Button>
+                    </Link>
                 </InfoContainer>
             </Slide>
         ))}

@@ -1,4 +1,7 @@
 import styled from "@emotion/styled"
+import { login } from "../Redux/loginCall.js";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 const Container = styled.div`
   width: 100vw;
@@ -59,17 +62,33 @@ const Link = styled.a`
   text-decoration: none;
 `;
 
+const Error = styled.div`
+  color: red;
+`
+
 const Login = () => {
+  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
+  const dispatch = useDispatch();
+
+  const { isFetchingUser, isError} = useSelector(state => state.user)
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    login(dispatch, {username, password});
+  }
+
   return (
     <Container>
       <Wrapper>
         <Title>SIGN IN</Title>
         <Form>
-          <Input placeholder="username" />
-          <Input placeholder="password" />
+          <Input placeholder="username" onChange={(e) => setUsername(e.target.value)}/>
+          <Input type="password" placeholder="password" onChange={(e) => setPassword(e.target.value)} />
+          {isError && <Error>*Invalid User Credentials</Error>}
           <Link>DO NOT YOU REMEMBER THE PASSWORD?</Link>
-          <Link>CREATE A NEW ACCOUNT</Link>
-          <Button>LOGIN</Button>
+          <Link>CREATE AN ACCOUNT</Link>
+          <Button onClick={handleLogin}>LOGIN</Button>
         </Form>
       </Wrapper>
     </Container>

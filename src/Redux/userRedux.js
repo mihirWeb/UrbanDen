@@ -21,5 +21,7 @@ const userSlice = createSlice({
     }
 });
 
+// the code logic is in loginCall.js file;
+
 export const {loginFailure, loginStart, loginSuccess} = userSlice.actions;
 export default userSlice.reducer;

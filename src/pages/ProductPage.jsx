@@ -10,7 +10,6 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { addProducts} from "../Redux/cartRedux.js";
 
-
 const Container = styled.div``;
 
 const Wrapper = styled.div`

@@ -51,7 +51,6 @@ import { mobile } from "../../responsive";
   const Center = styled.div`
     flex: 1;
     padding: 20px;
-    ${mobile` display: none;`}
   `;
   
   const Title = styled.h3`
@@ -77,7 +76,6 @@ import { mobile } from "../../responsive";
     @media only screen and (max-width: 412px){
       background-color: #fff8f8;
     }
-    ${'' /* ${mobile` background-color: #fff8f8;`} */}
   `;
   
   const ContactItem = styled.div`
@@ -123,7 +121,7 @@ import { mobile } from "../../responsive";
             <ListItem><Link to={'/products/men'} style={{textDecoration: "none", color: "black"}}>Man Fashion</Link></ListItem>
             <ListItem><Link to={'/products/women'} style={{textDecoration: "none", color: "black"}}>Women Fashion</Link></ListItem>
             <ListItem><Link to={'/products/accessories'} style={{textDecoration: "none", color: "black"}}>Accessories</Link></ListItem>
-            <ListItem>My Account</ListItem>
+            <ListItem><Link to={'/products'} style={{textDecoration: "none", color: "black"}}>All Products</Link></ListItem>
             <ListItem>Order Tracking</ListItem>
             <ListItem>Wishlist</ListItem>
             <ListItem>Wishlist</ListItem>

@@ -4,9 +4,10 @@ import Announcements from "../components/Announcements";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { useSelector, useDispatch } from "react-redux";
-import { addProducts } from "../Redux/cartRedux";
+import { addProducts, removeSingleProduct } from "../Redux/cartRedux";
 import {Link} from "react-router-dom"
-import {mobile} from "../../responsive.js"
+// import {mobile} from "../../responsive.js"
+import { addSingleProduct } from "../Redux/cartRedux";
 
 const Container = styled.div``;
 
@@ -160,7 +161,7 @@ const SummaryItemText = styled.span``;
 
 const SummaryItemPrice = styled.span``;
 
-const Button = styled.button`
+const Button = styled.a`
   width: 100%;
   padding: 10px;
   background-color: black;
@@ -170,8 +171,19 @@ const Button = styled.button`
 
 const Cart = () => {
 
+  const dispatch = useDispatch();
+
   const cart = useSelector(state => state.cart);
-  console.log(cart);
+  // console.log(cart);
+
+  const handleAddBtn = (id) => {
+    dispatch(addSingleProduct(id));
+  }
+
+  const handleRemoveBtn = (id) => {
+    dispatch(removeSingleProduct(id));
+  }
+  
 
   return (
     <Container>
@@ -180,7 +192,7 @@ const Cart = () => {
       <Wrapper>
         <Title>YOUR BAG</Title>
         <Top>
-          <TopButton>CONTINUE SHOPPING</TopButton>
+          <Link to={'/products'}><TopButton>CONTINUE SHOPPING</TopButton></Link>
           <TopTexts>
             <TopText>Shopping Bag({cart.quantity})</TopText>
             <TopText>Your Wishlist (0)</TopText>
@@ -191,8 +203,8 @@ const Cart = () => {
           <Info>
             {cart.products.map((product) => (
               <span>
-              <Link to={`/product/${product._id}`} style={{textDecoration: "none", color: "black"}} >
               <Product>
+              <Link to={`/product/${product._id}`} style={{textDecoration: "none", color: "black"}} >
                 <ProductDetail>
                 <Image src={product.img} />
                 <Details>
@@ -208,16 +220,16 @@ const Cart = () => {
                   </ProductSize>
                 </Details>
               </ProductDetail>
+              </Link>
               <PriceDetail>
                 <ProductAmountContainer>
-                  <Add />
+                  <Add onClick={() => handleAddBtn(product._id)} style={{cursor: "pointer"}}/>
                   <ProductAmount>{product.quantity}</ProductAmount>
-                  <Remove />
+                  <Remove onClick={() => handleRemoveBtn(product._id)} style={{cursor: "pointer"}}/>
                 </ProductAmountContainer>
                 <ProductPrice>{product.price}</ProductPrice>
               </PriceDetail>
               </Product>
-              </Link>
             <Hr />
               </span>
             ))}

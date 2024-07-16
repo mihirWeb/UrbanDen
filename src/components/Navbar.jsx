@@ -108,10 +108,13 @@ const Navbar = () => {
         </Left>
 
         <Center>
-          <Logo>UrbanDEN.</Logo>
+          <Logo><Link to={`/`} style={{textDecoration: "none", color: "black"}}>UrbanDEN.</Link></Logo>
         </Center>
         
         <Right>
+          <MenuItem><Link to={"/products/men"} style={{textDecoration: "none", color: "black"}}>Men</Link></MenuItem>
+          <MenuItem><Link to={"/products/women"} style={{textDecoration: "none", color: "black"}}>Women</Link></MenuItem>
+          <MenuItem><Link to={"/products"} style={{textDecoration: "none", color: "black"}}>All</Link></MenuItem>
           <MenuItem><Link to={"/register"} style={{textDecoration: "none", color: "black"}}>Register</Link></MenuItem>
           <MenuItem><Link to={"/login"} style={{textDecoration: "none", color: "black"}}>Log In</Link></MenuItem>
           <Link to={'/cart'}>

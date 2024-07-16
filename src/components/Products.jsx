@@ -110,7 +110,10 @@ const Products = (props) => {
         {category
         ? filterProducts.map(item => (<ProductItem item={item} key={item.key} style={{flexBasis: "50%"}} />))
         : products.map(item => (<ProductItem item={item} key={item.key} style={{flexBasis: "50%"}}/>))
-        }      
+        }    
+        {
+          products.length === 0 && <h1 style={{textAlign: "center"}}>"{category} are out of stock :("</h1>
+        }  
     </Container>
   )
 }

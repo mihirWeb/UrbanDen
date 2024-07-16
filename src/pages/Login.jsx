@@ -87,7 +87,7 @@ const Login = () => {
           <Input type="password" placeholder="password" onChange={(e) => setPassword(e.target.value)} />
           {isError && <Error>*Invalid User Credentials</Error>}
           <Link>DO NOT YOU REMEMBER THE PASSWORD?</Link>
-          <Link>CREATE AN ACCOUNT</Link>
+          <Link href="/register">CREATE AN ACCOUNT</Link>
           <Button onClick={handleLogin}>LOGIN</Button>
         </Form>
       </Wrapper>

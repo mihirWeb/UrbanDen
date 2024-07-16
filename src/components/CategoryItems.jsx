@@ -1,6 +1,7 @@
 import styled from '@emotion/styled'
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { mobile } from '../../responsive.js'
 
 const Container = styled.div`
     flex: 1;
@@ -13,6 +14,7 @@ const Image = styled.img`
     width: 100%;
     height: 100%;
     object-fit: cover;
+    ${mobile({ height: "20vh" })}
 `
 const Info = styled.div`
     position: absolute;

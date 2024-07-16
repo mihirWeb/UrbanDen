@@ -2,11 +2,13 @@ import React from 'react'
 import CategoryItems from './CategoryItems'
 import { categories } from '../data'
 import styled from '@emotion/styled'
+import { mobile } from '../../responsive.js'
 
 const Container =  styled.div`
     display: flex;
     padding: 20px;
     justify-content: space-between;
+    ${mobile({ padding: "0px", flexDirection:"column" })}
 `
 
 const Categories = () => {

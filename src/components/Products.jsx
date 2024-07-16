@@ -108,8 +108,8 @@ const Products = (props) => {
   return (
     <Container>
         {category
-        ? filterProducts.map(item => (<ProductItem item={item} key={item.key}/>))
-        : products.map(item => (<ProductItem item={item} key={item.key}/>))
+        ? filterProducts.map(item => (<ProductItem item={item} key={item.key} style={{flexBasis: "50%"}} />))
+        : products.map(item => (<ProductItem item={item} key={item.key} style={{flexBasis: "50%"}}/>))
         }      
     </Container>
   )

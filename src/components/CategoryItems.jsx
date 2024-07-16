@@ -14,7 +14,7 @@ const Image = styled.img`
     width: 100%;
     height: 100%;
     object-fit: cover;
-    ${mobile({ height: "20vh" })}
+     @media only screen and (max-width: 412px){ height: 40vh;}
 `
 const Info = styled.div`
     position: absolute;
@@ -26,6 +26,7 @@ const Info = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    ${'' /*  @media only screen and (max-width: 412px){ flex-direction: row; } */}
 `
 const Title = styled.h1`
     color: white;

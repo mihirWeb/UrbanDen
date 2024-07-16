@@ -12,7 +12,7 @@ const Container = styled.div``;
 
 const Wrapper = styled.div`
   padding: 20px;
-  ${mobile({ padding: "10px" })}
+   @media only screen and (max-width: 412px){ padding: 10px;}
 `;
 
 const Title = styled.h1`
@@ -38,7 +38,7 @@ const TopButton = styled.button`
 `;
 
 const TopTexts = styled.div`
-${mobile({ display: "none" })}
+ @media only screen and (max-width: 412px){ display: none;}
 `;
 const TopText = styled.span`
   text-decoration: underline;
@@ -49,7 +49,7 @@ const TopText = styled.span`
 const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
-  ${mobile({ flexDirection: "column" })}
+   @media only screen and (max-width: 412px){ flex-direction: column;}
 
 `;
 
@@ -60,7 +60,7 @@ const Info = styled.div`
 const Product = styled.div`
   display: flex;
   justify-content: space-between;
-  ${mobile({ flexDirection: "column" })}
+   @media only screen and (max-width: 412px){ flex-direction: column;}
 `;
 
 const ProductDetail = styled.div`
@@ -77,6 +77,9 @@ const Details = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  @media only screen and (max-width: 412px){
+    font-size: 13px;
+  }
 `;
 
 const ProductName = styled.span``;
@@ -98,24 +101,33 @@ const PriceDetail = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media only screen and (max-width: 412px){
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: baseline;
+  }
 `;
 
 const ProductAmountContainer = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  @media only screen and (max-width: 412px){
+    margin-bottom: 10px;
+    margin-top: 8px;
+  }
 `;
 
 const ProductAmount = styled.div`
   font-size: 24px;
   margin: 5px;
-  ${mobile({ margin: "5px 15px" })}
+   @media only screen and (max-width: 412px){ margin: 5px 15px}
   `;
 
 const ProductPrice = styled.div`
   font-size: 30px;
   font-weight: 200;
-  ${mobile({ marginBottom: "20px" })}  
+   @media only screen and (max-width: 412px){ margin-bottom: "20px"}  
 `;
 
 const Hr = styled.hr`

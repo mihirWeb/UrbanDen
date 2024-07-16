@@ -9,11 +9,14 @@ import {
   } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { mobile } from "../../responsive.js";
+import { mobile } from "../../responsive";
   
   const Container = styled.div`
     display: flex;
-    ${mobile({ flexDirection: "column" })}
+    flex-direction: row;
+    @media only screen and (max-width: 412px){
+      flex-direction: column;
+    }
   `;
   
   const Left = styled.div`
@@ -48,7 +51,7 @@ import { mobile } from "../../responsive.js";
   const Center = styled.div`
     flex: 1;
     padding: 20px;
-    ${mobile({ display: "none" })}
+    ${mobile` display: none;`}
   `;
   
   const Title = styled.h3`
@@ -71,7 +74,10 @@ import { mobile } from "../../responsive.js";
   const Right = styled.div`
     flex: 1;
     padding: 20px;  
-    ${mobile({ backgroundColor: "#fff8f8" })}
+    @media only screen and (max-width: 412px){
+      background-color: #fff8f8;
+    }
+    ${'' /* ${mobile` background-color: #fff8f8;`} */}
   `;
   
   const ContactItem = styled.div`

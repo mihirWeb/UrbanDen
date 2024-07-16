@@ -1,6 +1,6 @@
 import styled from "@emotion/styled"
 import { SendOutlined } from "@mui/icons-material";
-import { mobile } from "../responsive";
+import { mobile } from "../../responsive";
 
 const Container = styled.div`
   height: 60vh;
@@ -19,7 +19,7 @@ const Desc = styled.div`
   font-size: 24px;
   font-weight: 300;
   margin-bottom: 20px;
-  ${mobile({ textAlign: "center" })}
+   @media only screen and (max-width: 412px){ text-align: center; max-width: 80%}
 
 `;
 
@@ -30,7 +30,7 @@ const InputContainer = styled.div`
   display: flex;
   justify-content: space-between;
   border: 1px solid lightgray;
-  ${mobile({ width: "80%" })}
+   @media only screen and (max-width: 412px){ width: 80%;}
 `;
 
 const Input = styled.input`

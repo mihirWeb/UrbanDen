@@ -2,6 +2,7 @@ import React from 'react'
 import styled from "@emotion/styled"
 import { FavoriteBorderOutlined, SearchOutlined, ShoppingCartOutlined } from '@mui/icons-material'
 import { Link } from 'react-router-dom'
+import { mobile } from '../../responsive.js'
 
 const Info = styled.div`
     opacity: 0;

@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api/v2': {
-        target: 'http://localhost:5000',
+        target: 'https://urbandenapi.onrender.com',
         changeOrigin: true,
         pathRewrite: { '^/api/v2': '/api/v2' },
       },

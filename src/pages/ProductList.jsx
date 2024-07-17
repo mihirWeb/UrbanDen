@@ -24,20 +24,20 @@ const Filter = styled.div`
     margin: 20px;
     display: flex;
     align-items: center;
-     @media only screen and (max-width: 412px){ display: flex; flex-direction: column;}
+     @media only screen and (max-width: 480px){ display: flex; flex-direction: column;}
 `;
 
 const FilterText = styled.div`
     font-size: 20px;
     font-weight: 600;
     margin-right: 20px;
-     @media only screen and (max-width: 412px){ margin-right: 0px;}
+     @media only screen and (max-width: 480px){ margin-right: 0px;}
 `;
 
 const Select = styled.select`
     padding: 5px 10px;
     margin-right: 20px;
-     @media only screen and (max-width: 412px){ margin: 10px 0px; width: 100%}
+     @media only screen and (max-width: 480px){ margin: 10px 0px; width: 100%}
 `;
 
 const Option = styled.option``;

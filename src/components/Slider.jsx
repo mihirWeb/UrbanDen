@@ -12,7 +12,7 @@ const Container = styled.div`
     ${'' /* background-color: coral; */}
     position: relative;
     overflow: hidden;
-     @media only screen and (max-width: 412px){ display: none;}
+     @media only screen and (max-width: 480px){ display: none;}
 `
 
 const Arrow = styled.div`

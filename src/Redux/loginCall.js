@@ -5,7 +5,7 @@ export const login = async (dispatch, user) => {
     dispatch(loginStart());
     console.log("user is: ", user)
     try {
-        const res = await axios.post('/api/v2/auth/login', user);
+        const res = await axios.post('https://urbandenapi.onrender.com/api/v2/auth/login', user);
         dispatch(loginSuccess(res.data));
     } catch (error) {
         dispatch(loginFailure());

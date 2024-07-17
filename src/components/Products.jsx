@@ -22,7 +22,7 @@ const Products = (props) => {
   useEffect(() => {
     const getProducts = async() => {
       try {
-        const res = await axios.get(category? `/api/v2/products?category=${category}`: "/api/v2/products");
+        const res = await axios.get(category? `https://urbandenapi.onrender.com/api/v2/products?category=${category}`: "https://urbandenapi.onrender.com/api/v2/products");
         setProducts(res.data);
         // console.log("setProducts: "+ products);
       } catch (error) {

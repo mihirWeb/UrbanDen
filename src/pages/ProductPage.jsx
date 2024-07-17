@@ -138,7 +138,7 @@ const ProductPage = () => {
   useEffect(() => {
     const getProduct = async() => {
       try {
-        const item = await axios.get(`/api/v2/products/find/${itemId}`);
+        const item = await axios.get(`https://urbandenapi.onrender.com/api/v2/products/find/${itemId}`);
         setProduct(item.data);
       } catch (error) {
         console.error(error);

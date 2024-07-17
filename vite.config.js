@@ -13,4 +13,15 @@ export default defineConfig({
     },
   },
   plugins: [react()],
+  build: {
+    outDir: 'build',
+    proxy: {
+      '/api/v2': {
+        target: 'https://urbandenapi.onrender.com', // Replace with your API server URL
+        changeOrigin: true,
+        pathRewrite: { '^/api/v2': '/api/v2' },
+      },
+    },
+  },
+
 })

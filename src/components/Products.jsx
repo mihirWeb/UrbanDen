@@ -9,6 +9,12 @@ const Container = styled.div`
     padding: 20px;
     flex-wrap: wrap;
     justify-content: space-between;
+    @media only screen and (max-width: 500px){
+      padding: 0 0;
+      width: 100vw;
+      position: relative;
+      flex-direction: row;
+    }
 `
 
 const Products = (props) => {

@@ -33,6 +33,10 @@ const Container = styled.div`
     justify-content: center;
     background-color: #f5fbfd;
     position: relative;
+    @media only screen and (max-width: 500px){
+        height: 260px;
+        width: 47%;
+    }
 
 `
 

@@ -17,7 +17,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  @media only screen and (max-width: 480px){
+  @media only screen and (max-width: 500px){
     background: linear-gradient(
       rgba(255, 255, 255, 0.5),
       rgba(255, 255, 255, 0.5)
@@ -32,7 +32,7 @@ const Wrapper = styled.div`
   width: 25%;
   padding: 20px;
   background-color: white;
-   @media only screen and (max-width: 480px){ width: 75%;}
+   @media only screen and (max-width: 500px){ width: 75%;}
 `;
 
 const Title = styled.h1`

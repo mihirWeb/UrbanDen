@@ -8,7 +8,7 @@ import { mobile } from '../../responsive.js';
 
 const Container = styled.div`
     height: 60px;
-     @media only screen and (max-width: 480px){ height: 50px;}    
+     @media only screen and (max-width: 500px){ height: 50px;}    
 `;
 
 const Wrapper = styled.div`
@@ -16,7 +16,7 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: Center; 
-     @media only screen and (max-width: 480px){ padding: 10px 0px;}
+     @media only screen and (max-width: 500px){ padding: 10px 0px;}
 
 `;
 
@@ -28,7 +28,7 @@ const Left = styled.div`
 const Center = styled.div`
     flex: 1;
     text-align: center;
-    @media only screen and (max-width: 480px){
+    @media only screen and (max-width: 500px){
       position: absolute;
       left: 10px;
     }
@@ -38,13 +38,13 @@ const Right = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-end;
-     @media only screen and (max-width: 480px){ flex: 2; justify-content: end; margin-right: 20px}
+     @media only screen and (max-width: 500px){ flex: 2; justify-content: end; margin-right: 20px}
 `
 
 const Language = styled.span`
     font-size: 14px;
     cursor: pointer;
-     @media only screen and (max-width: 480px){ display: none;}
+     @media only screen and (max-width: 500px){ display: none;}
 `
 
 const SearchContainer = styled.div`
@@ -53,26 +53,26 @@ const SearchContainer = styled.div`
     align-items: Center;
     margin-left: 25px;
     padding: 5px;
-    @media only screen and (max-width: 480px){
+    @media only screen and (max-width: 500px){
       display: none;
     }
 `
 
 const Input = styled.input`
   border: none;
-   @media only screen and (max-width: 480px){ width: 50px;}
+   @media only screen and (max-width: 500px){ width: 50px;}
 `
 
 const Logo = styled.h1`
   font-weight: bold;
-   @media only screen and (max-width: 480px){ font-size: 24px;}
+   @media only screen and (max-width: 500px){ font-size: 24px;}
 `
 
 const MenuItem = styled.div`
   font-size: 14px;
   margin-left: 25px;
   cursor: pointer;
-   @media only screen and (max-width: 480px){ font-size: 12px; margin-left: 10px;}
+   @media only screen and (max-width: 500px){ font-size: 12px; margin-left: 10px;}
 `
 
 const Navbar = () => {

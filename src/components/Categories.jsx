@@ -8,7 +8,7 @@ const Container =  styled.div`
     display: flex;
     padding: 20px;
     justify-content: space-between;
-     @media only screen and (max-width: 480px){ padding: 0px; flex-direction: column;}
+     @media only screen and (max-width: 500px){ padding: 0px; flex-direction: column;}
 `
 
 const Categories = () => {

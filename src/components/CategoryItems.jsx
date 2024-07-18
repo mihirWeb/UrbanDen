@@ -14,7 +14,7 @@ const Image = styled.img`
     width: 100%;
     height: 100%;
     object-fit: cover;
-     @media only screen and (max-width: 480px){ height: 40vh;}
+     @media only screen and (max-width: 500px){ height: 40vh;}
 `
 const Info = styled.div`
     position: absolute;
@@ -26,7 +26,7 @@ const Info = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    ${'' /*  @media only screen and (max-width: 480px){ flex-direction: row; } */}
+    ${'' /*  @media only screen and (max-width: 500px){ flex-direction: row; } */}
 `
 const Title = styled.h1`
     color: white;

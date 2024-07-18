@@ -14,7 +14,7 @@ import { mobile } from "../../responsive";
   const Container = styled.div`
     display: flex;
     flex-direction: row;
-    @media only screen and (max-width: 480px){
+    @media only screen and (max-width: 500px){
       flex-direction: column;
     }
   `;
@@ -73,7 +73,7 @@ import { mobile } from "../../responsive";
   const Right = styled.div`
     flex: 1;
     padding: 20px;  
-    @media only screen and (max-width: 480px){
+    @media only screen and (max-width: 500px){
       background-color: #fff8f8;
     }
   `;
